@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Pesticide Sprayer — Premium (JS Model v2)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🤖</div>
+      <div class="title">
+        <h1>Smart Pesticide Sprayer</h1>
+        <p class="subtitle">Detect pest presence, then recommend pesticide only when needed</p>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#demo">Demo</a>
+      <a href="#how">How it works</a>
+      <a href="#safety">Safety</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero card glass">
+      <div class="hero-text">
+        <h2>Premium, smart, and safe — works fully on GitHub Pages.</h2>
+        <p>This browser demo analyzes your leaf image to decide: <strong>Pest Found</strong> or <strong>Pest Not Found</strong>.
+        Only when a pest is found, it suggests a suitable pesticide.</p>
+        <ul class="bullets">
+          <li>Binary decision: <strong>Pest Found / Pest Not Found</strong></li>
+          <li>Pesticide recommendation appears <em>only</em> when pest is found</li>
+          <li>Runs entirely in the browser (no backend)</li>
+        </ul>
+      </div>
+      <div class="hero-cta">
+        <a class="btn primary" href="#demo">Try the live demo</a>
+      </div>
+    </section>
+
+    <section id="demo" class="grid-2">
+      <div class="card glass">
+        <h3 class="card-title">1) Upload image</h3>
+        <p class="muted">Supported formats: JPG/PNG</p>
+        <label class="filedrop" for="imgInput">
+          <input id="imgInput" type="file" accept="image/*" />
+          <span>Click to choose or drop an image here</span>
+        </label>
+        <div id="previewBox" class="preview muted">No image selected</div>
+        <div class="actions">
+          <button class="btn primary" id="detectBtn">Run Detection</button>
+          <button class="btn" id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <h3 class="card-title">2) Results</h3>
+        <div id="resultPanel" class="result-panel">
+          <div class="empty muted">Results will appear here after detection.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="grid-3">
+      <div class="card glass">
+        <h4 class="card-title">Heuristic presence check</h4>
+        <p>A lightweight in-browser analysis (edges + brightness stats) estimates if pests exist. It’s a demo — replace with TF.js model when ready.</p>
+      </div>
+      <div class="card glass">
+        <h4 class="card-title">Recommendation logic</h4>
+        <p>Only when a pest is detected, a likely pest type is estimated and a pesticide suggestion is shown.</p>
+      </div>
+      <div class="card glass">
+        <h4 class="card-title">Upgrade path</h4>
+        <p>Swap the heuristic with a TensorFlow.js model to improve accuracy while staying GitHub-compatible.</p>
+      </div>
+    </section>
+
+    <section id="safety" class="card glass">
+      <h4 class="card-title">Pesticide guidance & safety</h4>
+      <ul class="muted bullets">
+        <li>Always follow local regulations and the product label.</li>
+        <li>Use PPE; avoid spraying during wind or near pollinators/water bodies.</li>
+        <li>Use IPM: monitoring, thresholds, biological controls, and rotate modes of action.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Smart Pesticide Sprayer — ML College Project</div>
+    <div class="links">
+      <a href="#hero">Top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
